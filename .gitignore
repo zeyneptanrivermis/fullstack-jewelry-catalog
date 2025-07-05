@@ -18,3 +18,13 @@ Thumbs.db
 
 # General build artefacts
 *.class
+
+# Maven wrapper & config
+/backend-api/.mvn/
+/backend-api/mvnw
+/backend-api/mvnw.cmd
+
+# Java build artifacts
+/backend-api/target/
+/backend-api/*.log
+*.class
