@@ -5,6 +5,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 
+import com.example.demo.dto.GoldApiResponse;
+
 import lombok.RequiredArgsConstructor;
 
 @Service
@@ -19,6 +21,10 @@ public class GoldPriceService {
     @Value("${goldapi.token}")
     private String apiToken;
 
+    /**
+     * fetches the current gold price from GoldAPI.io.
+     * the result is cached for 5 minutes via @Cacheable("goldPrice")
+     */
     @Cacheable("goldPrice")
     public double getGoldPrice() {
         try {
@@ -37,18 +43,6 @@ public class GoldPriceService {
             return response.getPrice();
         } catch (Exception e) {
             throw new RuntimeException("Failed to fetch gold price from GoldAPI", e);
-        }
-    }
-
-    private static class GoldApiResponse {
-        private Double price;
-
-        public Double getPrice() {
-            return price;
-        }
-
-        public void setPrice(Double price) {
-            this.price = price;
         }
     }
 }
