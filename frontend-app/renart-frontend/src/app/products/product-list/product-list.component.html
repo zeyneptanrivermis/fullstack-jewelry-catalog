@@ -1,1 +1,16 @@
-<p>product-list works!</p>
+<div class="carousel-container">
+  <button mat-icon-button class="arrow prev" (click)="prev()">
+    <mat-icon>chevron_left</mat-icon>
+  </button>
+
+  <div class="carousel" #carousel>
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product-card>
+  </div>
+
+  <button mat-icon-button class="arrow next" (click)="next()">
+    <mat-icon>chevron_right</mat-icon>
+  </button>
+</div>

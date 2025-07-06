@@ -1,1 +1,20 @@
-<p>product-card works!</p>
+<mat-card class="product-card">
+  <img mat-card-image [src]="selectedImage" alt="{{ product.name }}" />
+
+  <mat-card-content>
+    <h3 class="title">{{ product.name }}</h3>
+    <p class="price">${{ product.price.toFixed(2) }}</p>
+    <p class="weight">{{ product.weight.toFixed(1) }} gr</p>
+    <p class="rating">Rating: {{ displayRating }}/5</p>
+
+    <div class="colors">
+      <div
+        *ngFor="let key of colorKeys"
+        class="swatch"
+        [class.selected]="key === selectedColorKey"
+        [style.backgroundColor]="colorMap[key]"
+        (click)="onSelectColor(key)"
+      ></div>
+    </div>
+  </mat-card-content>
+</mat-card>
