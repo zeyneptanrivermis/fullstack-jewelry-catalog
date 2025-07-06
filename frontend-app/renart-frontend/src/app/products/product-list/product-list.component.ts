@@ -11,7 +11,7 @@ export class ProductListComponent implements OnInit {
   products: Product[] = [];
   @ViewChild('carousel', { read: ElementRef }) carousel!: ElementRef;
 
-  private scrollAmount = 280 + 24;
+  private scrollAmount = 280 + 24; // kart genişliği + margin
 
   constructor(private productService: ProductService) {}
 
@@ -27,7 +27,6 @@ export class ProductListComponent implements OnInit {
       behavior: 'smooth',
     });
   }
-
   prev(): void {
     this.carousel.nativeElement.scrollBy({
       left: -this.scrollAmount,

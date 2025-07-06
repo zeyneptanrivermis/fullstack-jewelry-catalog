@@ -1,20 +1,48 @@
 <mat-card class="product-card">
-  <img mat-card-image [src]="selectedImage" alt="{{ product.name }}" />
+  <img
+    mat-card-image
+    [src]="product.images[selectedColorKey]"
+    alt="{{ product.name }}"
+    class="product-image"
+  />
 
   <mat-card-content>
     <h3 class="title">{{ product.name }}</h3>
-    <p class="price">${{ product.price.toFixed(2) }}</p>
-    <p class="weight">{{ product.weight.toFixed(1) }} gr</p>
-    <p class="rating">Rating: {{ displayRating }}/5</p>
+    <p class="price">${{ product.price.toFixed(2) }} USD</p>
 
     <div class="colors">
       <div
         *ngFor="let key of colorKeys"
         class="swatch"
         [class.selected]="key === selectedColorKey"
-        [style.backgroundColor]="colorMap[key]"
+        [attr.data-color]="key"
         (click)="onSelectColor(key)"
       ></div>
+    </div>
+
+    <p class="gold-type">
+      {{ selectedColorKey.charAt(0).toUpperCase() + selectedColorKey.slice(1) }} Gold
+    </p>
+
+    <div class="rating">
+      <ng-container *ngFor="let star of getStars(product.rating)">
+        <mat-icon
+          *ngIf="star === 1" class="filled-star"
+        >
+          star
+        </mat-icon>
+        <mat-icon
+          *ngIf="star === 0.5" class="half-star"
+        >
+          star_half
+        </mat-icon>
+        <mat-icon
+          *ngIf="star === 0" class="empty-star"
+        >
+          star_border
+        </mat-icon>
+      </ng-container>
+      <span class="rating-value">{{ product.rating.toFixed(1) }}/5</span>
     </div>
   </mat-card-content>
 </mat-card>
