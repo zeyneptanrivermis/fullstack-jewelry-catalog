@@ -1,0 +1,4 @@
+/* OWL Carousel CSS override fix */
+.owl-theme .owl-nav [class*='owl-'] {
+  display: inline; /* override to fix *display warning */
+}

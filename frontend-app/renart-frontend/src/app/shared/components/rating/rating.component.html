@@ -1,1 +1,8 @@
-<p>rating works!</p>
+<div class="rating">
+  <ng-container *ngFor="let star of getStars()">
+    <mat-icon *ngIf="star === 1" class="filled-star"> star </mat-icon>
+    <mat-icon *ngIf="star === 0.5" class="half-star"> star_half </mat-icon>
+    <mat-icon *ngIf="star === 0" class="empty-star"> star_border </mat-icon>
+  </ng-container>
+  <span class="rating-value">{{ rating.toFixed(1) }}/5</span>
+</div>
