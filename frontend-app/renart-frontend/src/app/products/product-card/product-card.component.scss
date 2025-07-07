@@ -1,32 +1,27 @@
 .product-card {
-  width: 280px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  background-color: #fff;
-  flex-shrink: 0;
+  width: 300px;
+  background-color: transparent;
+  box-shadow: none !important;
+  border: none !important;
+  outline: none;
 
-  // Resim alanı
+
   .product-image {
-    width: 100%;
-    height: 200px;
     object-fit: cover;
-    background-color: #f5f5f5;
-
-        border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-bottom-left-radius: 25px;
   }
 
-  // Card içeriği
   mat-card-content {
     padding: 16px;
     display: flex;
     flex-direction: column;
     gap: 8px;
 
-    // Başlık: Montserrat Medium 15px
     .title {
-      font-family: 'Montserrat', sans-serif;
+      font-family: "Montserrat-Medium", sans-serif;
       font-weight: 500;
       font-size: 15px;
       line-height: 20px;
@@ -34,86 +29,12 @@
       color: #000;
     }
 
-    // Fiyat: Avenir Book 14px
     .price {
-      font-family: 'Avenir', sans-serif;
+      font-family: "Montserrat-Regular", sans-serif;
       font-weight: 400;
-      font-size: 14px;
+      font-size: 15px;
       margin: 0;
       color: #000;
-    }
-
-    // Renk seçiciler
-    .colors {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin: 8px 0;
-
-      .swatch {
-        width: 24px;
-        height: 24px;
-        border-radius: 50%;
-        border: 1px solid #ccc;
-        cursor: pointer;
-        transition: border 0.2s;
-
-        // Sıra: sarı, gri(white), pembe(rose)
-        &[data-color="yellow"] {
-          background-color: #e6ca97;
-        }
-        &[data-color="white"] {
-          background-color: #d9d9d9;
-        }
-        &[data-color="rose"] {
-          background-color: #e1a4a9;
-        }
-
-        &.selected {
-          border: 2px solid #000;
-        }
-      }
-    }
-
-    // Seçili gold tipi: Avenir Book 12px
-    .gold-type {
-      font-family: 'Avenir', sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      color: #666;
-      margin: 0;
-    }
-
-    // Rating bölümü
-    .rating {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-
-      mat-icon {
-        font-size: 14px;
-        vertical-align: middle;
-
-        // Dolu veya yarım dolu yıldızlar
-        &.filled-star,
-        &.half-star {
-          color: #ffd180;
-        }
-
-        // Boş yıldızlar
-        &.empty-star {
-          color: #d3d3d3;
-        }
-      }
-
-      // Değer: Montserrat Regular 15px
-      .rating-value {
-        font-family: 'Montserrat', sans-serif;
-        font-weight: 400;
-        font-size: 15px;
-        color: #333;
-      }
     }
   }
 }

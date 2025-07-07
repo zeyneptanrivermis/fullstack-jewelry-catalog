@@ -2,10 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 24px 0;
+  margin: 200px 0 80px 0;
 
   .header-title {
-    font-family: 'Avenir', sans-serif;
+    font-family: "Avenir Book", sans-serif;
     font-weight: 400;
     font-size: 45px;
     line-height: 1;
@@ -14,59 +14,56 @@
   }
 }
 
-.carousel-container {
-  /* 4×280px + 3×24px = 1192px, tam 4 kart görünür */
-  max-width: 1192px; /* Dört kartı sığdırmak için güncellendi */
-  margin: 0 auto;
+.carousel-wrapper {
   position: relative;
-  overflow: hidden;
-  padding: 0;
+  max-width: 1248px;
+  margin: 0 auto;
 }
 
 .carousel {
   display: flex;
-  gap: 24px;
   overflow-x: auto;
-  overflow-y: hidden;
   scroll-behavior: smooth;
+  gap: 24px;
 
-  // Dilersen kendi scrollbar thumb'unu böyle de stillendirebilirsin:
-  &::-webkit-scrollbar {
-    height: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.2);
-    border-radius: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: rgba(0,0,0,0.05);
-  }
+  width: 1248px;
+  margin: 0 auto;
+  padding-bottom: 8px;
+  box-sizing: content-box;
 }
 
 .arrow {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #fff; /* PDF’de beyaz zemin */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  border-radius: 50%;
-  width: 32px;
-  height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
+  top: 90px;
+  transform: translateY(0);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 2;
 }
 
 .arrow.prev {
-  left: 0; /* konteynerin tam solunda */
+  left: -48px;
 }
 
 .arrow.next {
-  right: 0; /* konteynerin tam sağında */
+  right: -48px;
 }
 
-.arrow mat-icon {
-  font-size: 24px; /* ok boyutu */
-  color: #000; /* ok rengi */
+.chevron {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-style: solid;
+  border-width: 2px 2px 0 0;
+  border-color: currentColor;
+}
+
+.chevron-left {
+  transform: rotate(-135deg);
+}
+
+.chevron-right {
+  transform: rotate(45deg);
 }

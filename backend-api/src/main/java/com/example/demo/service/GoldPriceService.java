@@ -40,7 +40,8 @@ public class GoldPriceService {
                 throw new RuntimeException("GoldAPI returned null response");
             }
 
-            return response.getPrice();
+            return response.getPrice() / 31.1035;
+
         } catch (Exception e) {
             throw new RuntimeException("Failed to fetch gold price from GoldAPI", e);
         }
