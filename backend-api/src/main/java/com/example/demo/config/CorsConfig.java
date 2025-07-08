@@ -13,9 +13,9 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**")
-                        .allowedOrigins("https://zeynep-tanrivermis-renart-case-study-dm0uvjzt1.vercel.app")
-                        .allowedMethods("GET", "POST", "PUT", "DELETE")
+                registry.addMapping("/**")
+                        .allowedOrigins("*") 
+                        .allowedMethods("*")
                         .allowedHeaders("*");
             }
         };
