@@ -31,8 +31,14 @@ public class ProductService {
         try {
             ObjectMapper mapper = new ObjectMapper();
             InputStream inputStream = getClass().getClassLoader().getResourceAsStream("products.json");
+
+            if (inputStream == null) {
+                throw new RuntimeException("products.json not found in resources folder.");
+            }
+
             List<Product> rawProducts = mapper.readValue(inputStream, new TypeReference<List<Product>>() {
             });
+
             double goldPrice = goldPriceService.getGoldPrice();
 
             return rawProducts.stream().map(p -> {
