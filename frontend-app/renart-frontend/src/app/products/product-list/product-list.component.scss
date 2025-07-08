@@ -16,6 +16,7 @@
 
 .carousel-wrapper {
   position: relative;
+  width: 100%; // mobil için daha esnek
   max-width: 1248px;
   margin: 0 auto;
 
@@ -34,11 +35,11 @@
     justify-content: center;
 
     &.prev {
-      left: 0;
+      left: -12px; // daha görünür olsun
     }
 
     &.next {
-      right: 0;
+      right: -12px;
     }
 
     .chevron {
@@ -62,11 +63,8 @@
     .arrow {
       top: 40%;
       padding: 6px;
-    }
-
-    .carousel {
-      scroll-snap-type: x mandatory;
-      scroll-padding: 1rem;
+      width: 32px;
+      height: 32px;
     }
   }
 }
@@ -75,10 +73,12 @@
   display: flex;
   overflow-x: auto;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
   gap: 24px;
   width: 100%;
   padding-bottom: 8px;
   box-sizing: content-box;
+  -webkit-overflow-scrolling: touch;
 
   &::-webkit-scrollbar {
     height: 6px;
@@ -88,4 +88,9 @@
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 4px;
   }
+}
+
+.product-card {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
 }
