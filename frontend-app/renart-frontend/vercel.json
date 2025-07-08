@@ -4,10 +4,10 @@
   ],
   "builds": [
     {
-      "src": "angular.json",
+      "src": "frontend-app/renart-frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
-        "distDir": "dist/renart-frontend"
+        "distDir": "frontend-app/renart-frontend/dist/renart-frontend"
       }
     }
   ]
