@@ -9,4 +9,4 @@ RUN chmod +x mvnw
 # Derleme işlemi
 RUN ./mvnw clean package -DskipTests
 
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["java", "-jar", "target/demo-0.0.1-SNAPSHOT.jar"]
