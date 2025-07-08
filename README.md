@@ -60,7 +60,7 @@ RenArt is a modern, database-free full-stack web app built with Angular (fronten
 
 ---
 
-## 🛠️ Getting Started (Manual Setup)
+## Getting Started (Manual Setup)
 
 ### Backend
 ```bash
