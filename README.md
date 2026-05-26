@@ -1,5 +1,5 @@
 
-# RenArt – Full-Stack Jewelry Catalog App
+# Full-Stack Jewelry Catalog App
 
 Demo Link: https://zeynep-tanrivermis-renart-case-stud.vercel.app 
 
