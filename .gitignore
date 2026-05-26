@@ -18,3 +18,8 @@ Thumbs.db
 
 # General build artefacts
 *.class
+
+# Java build artifacts
+/backend-api/target/
+/backend-api/*.log
+*.class

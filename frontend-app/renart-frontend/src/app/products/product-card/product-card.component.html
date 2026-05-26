@@ -1,0 +1,22 @@
+<mat-card class="product-card">
+  <img
+    mat-card-image
+    [src]="product.images[selectedColorKey]"
+    alt="{{ product.name }}"
+    class="product-image"
+  />
+
+  <mat-card-content>
+    <h3 class="title">{{ product.name }}</h3>
+    <p class="price">${{ product.price.toFixed(2) }} USD</p>
+
+    <app-color-picker
+      [selectedColorKey]="selectedColorKey"
+      (colorChange)="onSelectColor($event)"
+    >
+    </app-color-picker>
+
+    <app-rating [rating]="product.rating"></app-rating>
+
+  </mat-card-content>
+</mat-card>

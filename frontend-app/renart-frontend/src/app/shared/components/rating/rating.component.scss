@@ -1,0 +1,33 @@
+.rating {
+  display: flex;
+  align-items: center;
+  font-size: 0; // inline spacing'i sıfırlar
+
+  mat-icon {
+    font-size: 16px;
+    color: #D3D3D3;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    width: 16px;
+    height: 16px;
+
+    &.filled-star,
+    &.half-star {
+      color: #FFD180;
+    }
+
+    &.empty-star {
+      color: #D3D3D3;
+    }
+  }
+
+  .rating-value {
+    font-family: 'Avenir Book', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #333;
+    margin-left: 6px;
+    line-height: 1;
+  }
+}

@@ -1,0 +1,20 @@
+<div class="color-picker-wrapper">
+  <div class="colors">
+    <div
+      *ngFor="let key of colorKeys"
+      class="swatch"
+      [class.selected]="key === selectedColorKey"
+      [attr.data-color]="key"
+      (click)="onSelectColor(key)"
+    >
+      <div class="inner"></div>
+    </div>
+  </div>
+
+  <p class="selected-label" *ngIf="selectedColorKey">
+    {{
+      selectedColorKey.charAt(0).toUpperCase() + selectedColorKey.slice(1)
+    }}
+    Gold
+  </p>
+</div>

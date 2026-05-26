@@ -1,0 +1,9 @@
+{
+  "outputDirectory": "dist/renart-frontend",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

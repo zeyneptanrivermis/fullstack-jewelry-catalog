@@ -1,0 +1,20 @@
+<div class="product-list-header">
+  <h2 class="header-title">Product List</h2>
+</div>
+
+<div class="carousel-wrapper">
+  <button class="arrow prev" (click)="prev()" aria-label="Previous">
+    <span class="chevron chevron-left"></span>
+  </button>
+
+  <div class="carousel" #carousel>
+    <app-product-card
+      *ngFor="let product of products"
+      [product]="product"
+    ></app-product-card>
+  </div>
+
+  <button class="arrow next" (click)="next()" aria-label="Next">
+    <span class="chevron chevron-right"></span>
+  </button>
+</div>
